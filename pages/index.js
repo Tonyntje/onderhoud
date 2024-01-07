@@ -1,16 +1,22 @@
 import Image from "next/image";
 import Logo from './../public/TheBarbersClubLogo.svg'
 import phoneIcon from './../public/phone--incoming.svg'
+import { Manrope } from 'next/font/google'
+
+const manrope = Manrope({
+  subsets: ['latin'],
+  display: 'swap',
+})
 
 export default function Home() {
   return (
     <main
-      className='flex items-center justify-center bg-[radial-gradient(169.40%_89.55%_at_94.76%_6.29%,rgb(63_201_99_/_40%)_0%,rgb(79_139_27)_100%)] min-h-screen min-w-screen'
+      className={`${manrope.className} flex items-center justify-center bg-[radial-gradient(169.40%_89.55%_at_94.76%_6.29%,rgb(63_201_99_/_40%)_0%,rgb(79_139_27)_100%)] min-h-screen min-w-screen`}
     >
-      <div className='border-primary-200 shadow-2xl text-center text-white border p-12 rounded-2xl max-w-[600px]'>
+      <div className='border-primary-200 sm:shadow-2xl text-center text-white sm:border p-6 sm:p-12 sm:rounded-2xl max-w-[600px]'>
         <Image className='mx-auto mb-10' src={Logo} alt={'logo'}/>
-        <h1>Website komt binnenkort online!</h1>
-        <h4 className='font-light'>We zijn nog druk aan de slag met de website. <br/> Nog een klein beetje geduld
+        <h1 className='drop-shadow-xl'>Website komt binnenkort online!</h1>
+        <h4 className='font-light text-[20px] sm:text-xl'>We zijn nog druk aan de slag met de website. <br/> Nog een klein beetje geduld
           alstublieft!</h4>
 
         <div className='flex flex-col bg-white text-center text-neutral-800 mt-10 p-6 rounded-2xl w-full'>
